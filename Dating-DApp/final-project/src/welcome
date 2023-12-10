@@ -1,1 +1,49 @@
+<script>
+  import { onMount } from 'svelte';
+</script>
 
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: darkslategray;
+  }
+
+  .logo {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+	
+  .heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .subheading {
+    font-size: 16px;
+    color: #888;
+  }
+
+  .button {
+    border: none;
+    background-color: #f00;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+</style>
+
+<div class="container">
+  <img src="welcome_screen_image.png" alt="Logo" class="logo" />
+  <h1 class="heading" style="opacity: 0; transform: translateX(50px);">Welcome to Dating DApp!</h1>
+  <p class="subheading" style="opacity: 0; transition: opacity 0.5s ease-in-out;">
+	  Express your authentic self to your future loved one without the government watching!
+	</p>
+  <button class="button">Start</button>
+</div>
