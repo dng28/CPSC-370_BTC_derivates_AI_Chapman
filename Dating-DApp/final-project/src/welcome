@@ -1,35 +1,50 @@
 <script>
-  import { onMount } from 'svelte';
+    import { fade } from 'svelte/transition';
+    import { onMount } from "svelte";
+
+    let mounted = false;
+    onMount(() => {
+        mounted = true;
+    })
+
 </script>
 
+<main>
+  <img src="welcome_screen_image.png" alt="Dating DApp Logo">
+    {#if mounted}
+      <h1 class="heading" in:fade={{ delay: 0, duration: 300 }}>
+        Welcome to Dating DApp!
+      </h1>
+      <p class="subheading" in:fade={{ delay: 300, duration: 300 }}>
+        Express your authentic self to your future loved one without the government watching!
+      </p>
+    {/if}
+  <button on:click={() => location.href = "/signup"}>Start</button>
+</main>
+
 <style>
-  .container {
+  main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: darkslategray;
+    padding: 2em;
+        background-color: darkslategray;
   }
 
-  .logo {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 20px;
-  }
-	
   .heading {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-size: 2em;
+    margin-top: 1em;
   }
 
   .subheading {
-    font-size: 16px;
-    color: #888;
+    font-size: 1.5em;
+    margin-top: 0.5em;
+    text-align: center;
   }
 
-  .button {
+  button {
     border: none;
     background-color: #f00;
     color: #fff;
@@ -38,12 +53,3 @@
     cursor: pointer;
   }
 </style>
-
-<div class="container">
-  <img src="welcome_screen_image.png" alt="Logo" class="logo" />
-  <h1 class="heading" style="opacity: 0; transform: translateX(50px);">Welcome to Dating DApp!</h1>
-  <p class="subheading" style="opacity: 0; transition: opacity 0.5s ease-in-out;">
-	  Express your authentic self to your future loved one without the government watching!
-	</p>
-  <button class="button">Start</button>
-</div>
