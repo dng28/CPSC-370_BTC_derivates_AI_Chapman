@@ -1,0 +1,26 @@
+[package]
+name = "rgb20-token"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "my_program"
+path = "src/main.rs"
+
+[lib]
+name = "rgb20_token"
+path = "src/lib.rs"
+
+[dependencies]
+amplify = "4.0.1"
+strict_encoding = "2.5.0"
+strict_types = "1.6.1"
+bp-core = "0.10.9"
+rgb-std = { version = "0.10.8", features = ["serde", "fs"] }
+serde = "1.0.152"
+serde_json = "1.0.93"
+rgb-schemata = "0.10.0"
+lazy_static = "1.4.0"
+system = "0.1.0"
+library = "0.0.2"
+some_crate = "0.1.0"
